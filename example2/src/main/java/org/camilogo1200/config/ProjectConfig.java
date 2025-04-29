@@ -1,6 +1,7 @@
 package org.camilogo1200.config;
 
 import org.camilogo1200.beans.Customer;
+import org.camilogo1200.utils.qualifiers.EmptyCustomerQualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -29,7 +30,6 @@ public class ProjectConfig {
     return customer;
   }
 
-
   @Bean(value = "FakeCustomer")
   public Customer createFakeCustomer() {
     Customer customer = new Customer();
@@ -51,4 +51,17 @@ public class ProjectConfig {
     customer.setEmail("");
     return customer;
   }
+
+  @Bean
+  @EmptyCustomerQualifier
+  public Customer createEmptyCustomerWithQualifier() {
+    Customer customer = new Customer();
+    customer.setName("Bean Marked with qualifier");
+    customer.setLastName("@EmptyQualifier");
+    customer.setAddress("None");
+    customer.setPhone("123456789");
+    customer.setEmail("emptyQualifier@myemail.com");
+    return customer;
+  }
+
 }

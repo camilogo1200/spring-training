@@ -14,5 +14,5 @@ import org.springframework.beans.factory.annotation.Qualifier;
 @Qualifier
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ FIELD, PARAMETER, METHOD, TYPE })
-public @interface EmptyCustomer {
+public @interface EmptyCustomerQualifier {
 }

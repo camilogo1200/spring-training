@@ -1,7 +1,11 @@
 package org.camilogo1200.main;
 
+import java.util.Collection;
+
 import org.camilogo1200.beans.Customer;
 import org.camilogo1200.config.ProjectConfig;
+import org.camilogo1200.utils.qualifiers.BeanUtils;
+import org.camilogo1200.utils.qualifiers.EmptyCustomerQualifier;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -26,5 +30,10 @@ public class Main {
 
     Customer fakeCustomer = context.getBean("FakeCustomer", Customer.class);
     System.out.println(fakeCustomer);
+
+    Collection<Customer> emptyQualifierCustomer =
+        BeanUtils.getBeansByTypeAndAnnotation(context, Customer.class, EmptyCustomerQualifier.class);
+    System.out.println(emptyQualifierCustomer);
+
   }
 }
