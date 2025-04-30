@@ -18,7 +18,6 @@ public class Main {
     //use name, value properties to avoid it!
     //qualifiers is a clean approach but needs more knowledge
     var context = new AnnotationConfigApplicationContext(ProjectConfig.class);
-
     Customer nameOfMethod = context.getBean("nameOfMethodToCreateCustomer", Customer.class);
     System.out.println(nameOfMethod);
 
