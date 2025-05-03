@@ -2,6 +2,7 @@ package org.camilogo1200.main;
 
 import org.camilogo1200.beans.Customer;
 import org.camilogo1200.config.ProjectConfig;
+import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Main {
@@ -14,6 +15,9 @@ public class Main {
     System.out.println(annotatedComponentBean);
     annotatedComponentBean.printCustomer();
 
-    context.close();
+    ConfigurableListableBeanFactory beanFactory = context.getBeanFactory();
+    beanFactory.destroyBean(annotatedComponentBean);
+
+    //context.close();
   }
 }
