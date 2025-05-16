@@ -5,7 +5,7 @@ and adding the dependency as a parameter for the @Bean method.
 
 Note:
 
-- the parameter should be a object type, that Spring has a reference for a method to create, using the @Bean annotation.
+- the parameter should be an object type, that Spring has a reference for a method to create, using the @Bean annotation.
 
 ````java
  public Vehicle vehicle() {
