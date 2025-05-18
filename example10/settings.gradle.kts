@@ -1,0 +1,1 @@
+rootProject.name = "example10 - @Autowired - class field"
