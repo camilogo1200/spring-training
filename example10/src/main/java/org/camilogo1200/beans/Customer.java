@@ -23,6 +23,8 @@ public class Customer {
   private Property property;
   @Autowired
   private Vehicle vehicle;
+  @Autowired(required = false)
+  private Wallet wallet;
 
   @Override
   public String toString() {
@@ -32,7 +34,7 @@ public class Customer {
         ", lastName='" + lastName + '\'' +
         ", address='" + address + '\'' +
         ", phone='" + phone + '\'' +
-        ", email='" + email + '\'' +  '\n' +
+        ", email='" + email + '\'' + '\n' +
         ", property=" + property + '\n' +
         ", vehicle=" + vehicle + '\n' +
         '}';

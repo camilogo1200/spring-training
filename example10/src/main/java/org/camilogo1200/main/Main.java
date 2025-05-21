@@ -23,18 +23,21 @@ public class Main {
       var customerMessage = MessageFormat.format(" Customer from context = {0}", customer);
       var vehicleMessage = MessageFormat.format(" Vehicle from context= {0} ", vehicle);
       var propertyMessage = MessageFormat.format(" Property from context = {0} ", property);
+      var customerWalletMessage =
+          MessageFormat.format(" Waller from customer using @Autowired = {0} ", customer.getWallet());
       var customerVehicle = MessageFormat.format(" Customer vehicle  using @Autowired = {0}", customer.getVehicle());
       var customerProperty = MessageFormat.format(" Customer property using @Autowired = {0}", customer.getProperty());
 
       System.out.println(customerMessage);
       System.out.println(vehicleMessage);
       System.out.println(propertyMessage);
+      System.out.println(customerWalletMessage);
       System.out.println(customerVehicle);
       System.out.println(customerProperty);
 
     } catch (NoSuchBeanDefinitionException ex) {
       String message =
-          MessageFormat.format("Customer or Vehicle bean does not exist [NoSuchBeanDefinitionException]: {0}",
+          MessageFormat.format("[NoSuchBeanDefinitionException]: {0}",
               ex.getMessage());
       System.out.println(message);
     }
