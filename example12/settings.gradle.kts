@@ -1,0 +1,1 @@
+rootProject.name = "example12 - @Autowired constructor"
