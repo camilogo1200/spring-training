@@ -1,0 +1,1 @@
+rootProject.name = "example13 - Singleton Bean scope"
