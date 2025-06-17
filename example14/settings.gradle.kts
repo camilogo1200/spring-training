@@ -1,0 +1,1 @@
+rootProject.name = "example14 - Lazy adn Eager Bean initialization"
