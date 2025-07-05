@@ -2,8 +2,9 @@ package org.camilogo1200.main;
 
 import java.text.MessageFormat;
 
+import org.camilogo1200.beans.Customer;
+import org.camilogo1200.beans.Property;
 import org.camilogo1200.config.ProjectConfig;
-import org.camilogo1200.services.CustomerServices;
 import org.springframework.beans.factory.NoSuchBeanDefinitionException;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -14,14 +15,13 @@ public class Main {
     //avoids exception .NoUniqueBeanDefinitionException using @Primary annotation
     var context = new AnnotationConfigApplicationContext(ProjectConfig.class);
     try {
-      var customerService = context.getBean(CustomerServices.class);
-      var customerService2 = context.getBean("customerServices", CustomerServices.class);
-
-      if (customerService2.hashCode() == customerService.hashCode()) {
-        System.out.println("Customer Services are scoped bean to singleton");
-      } else {
-        System.out.println("Different scopes ( different beans )");
-      }
+      System.out.println("main init");
+      var Customer = context.getBean(Customer.class);
+      System.out.println("obtained Customer");
+      var property = context.getBean(Property.class);
+      System.out.println("obtained property");
+      System.out.println(Customer.getAddress());
+      System.out.println(property);
 
     } catch (NoSuchBeanDefinitionException ex) {
       String message =

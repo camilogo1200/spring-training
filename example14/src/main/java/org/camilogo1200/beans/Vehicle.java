@@ -13,6 +13,8 @@ public class Vehicle {
   private String model;
   private String color;
 
+
+
   @Override
   public String toString() {
     return "Vehicle{" +

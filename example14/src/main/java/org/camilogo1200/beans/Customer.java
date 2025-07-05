@@ -1,9 +1,9 @@
 package org.camilogo1200.beans;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
+import jakarta.annotation.PostConstruct;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,7 +12,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Component
-@Lazy
 public class Customer {
   private int id;
   private String name;
@@ -20,10 +19,13 @@ public class Customer {
   private String address;
   private String phone;
   private String email;
-  @Autowired
-  private Property property;
 
   private Vehicle vehicle;
+
+  @PostConstruct
+  public void init() {
+    System.out.println("== Customer Bean initialized (Eager) ==");
+  }
 
   // @Autowired is optional from Spring 4.3 only if there is only one constructor in the class
   @Autowired
@@ -40,7 +42,6 @@ public class Customer {
         ", address='" + address + '\'' +
         ", phone='" + phone + '\'' +
         ", email='" + email + '\'' + '\n' +
-        ", property=" + property + '\n' +
         ", vehicle=" + vehicle + '\n' +
         '}';
   }
