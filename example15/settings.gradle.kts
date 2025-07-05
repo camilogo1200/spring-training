@@ -1,0 +1,1 @@
+rootProject.name = "example15 - prototype bean scope"
