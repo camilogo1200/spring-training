@@ -9,9 +9,6 @@ This example teach you how to test Prototype Bean scope instantiation on beans
 4. Retrieve the bean via ObjectProvider and close manually.
 ````java
 
-@Component //By default, is always singleton
-@Lazy //initialize the singleton bean only when the application is trying to refer to the bean
-
 @Component
 @Scope("prototype") or @Scope(BeanDefinition.SCOPE_PROTOTYPE)
 public class CustomerServices {
