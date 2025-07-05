@@ -2,6 +2,11 @@
 
 This example teach you how to test eager and lazy instantiation on beans
 
+## Note:
+
+- Use eager with all the beans which are usually required inside the application,
+- Use `@Lazy` with beans that are rarely used in the application
+
 1. Eager is the default behavior on Spring.
 2. `@Lazy` can be user with `@Component` or `@Bean` annotation
 3. if @Lazy is not present, the default behavior is eager
