@@ -1,0 +1,1 @@
+rootProject.name = "example16 - ObjectProvider"
