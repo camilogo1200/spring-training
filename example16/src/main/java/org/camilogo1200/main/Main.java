@@ -4,6 +4,7 @@ import java.text.MessageFormat;
 
 import org.camilogo1200.config.ProjectConfig;
 import org.camilogo1200.services.CustomerServices;
+import org.camilogo1200.services.VehicleServices;
 import org.springframework.beans.factory.NoSuchBeanDefinitionException;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -15,9 +16,12 @@ public class Main {
     var context = new AnnotationConfigApplicationContext(ProjectConfig.class);
     try {
       try (var customerServices = context.getBean(CustomerServices.class);
-          var customerServices2 = context.getBean("customerServices", CustomerServices.class)) {
+          var customerServices2 = context.getBean("customerServices", CustomerServices.class);
+          var vehicleServices = context.getBean(VehicleServices.class)
+      ) {
         System.out.println(customerServices.getNumber());
         System.out.println(customerServices2.getNumber());
+        vehicleServices.createNewVehicle();
       } catch (Exception e) {
         throw new RuntimeException(e);
       }
